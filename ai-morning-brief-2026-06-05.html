@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 晨报｜2026-06-05</title>
+  <style>
+    :root {
+      --paper: #f7f3ec;
+      --paper-edge: #e6ddd1;
+      --ink: #23201b;
+      --muted: #726c63;
+      --line: #d8cfc3;
+      --teal: #4d7f88;
+      --teal-soft: #e2eef0;
+      --rust: #b65c3e;
+      --rust-soft: #f3dfd7;
+      --gold: #c79233;
+      --headline: #1f1c18;
+      --chip: #f1ece4;
+      --shadow: rgba(53, 42, 28, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(77, 127, 136, 0.08), transparent 24%),
+        linear-gradient(180deg, #ece5d9 0%, #e4dbcf 100%);
+      color: var(--ink);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 1080px;
+      margin: 28px auto 40px;
+      padding: 30px 34px 40px;
+      background: var(--paper);
+      border: 1px solid var(--paper-edge);
+      box-shadow: 0 14px 42px var(--shadow);
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .folio {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 24px;
+      color: #4d4942;
+      letter-spacing: 0.04em;
+    }
+
+    .masthead {
+      text-align: right;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .ribbon {
+      margin: 14px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(90deg, var(--teal) 0%, #7fa7ae 100%);
+      color: #fff;
+      padding: 9px 14px 10px;
+    }
+
+    .ribbon span {
+      font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+      font-size: 29px;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .ribbon::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.55fr 0.95fr;
+      gap: 22px;
+      margin-bottom: 26px;
+    }
+
+    .hero-main {
+      min-height: 360px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(18, 32, 38, 0.05) 0%, rgba(18, 32, 38, 0.46) 100%),
+        linear-gradient(135deg, #7d969b 0%, #4d6671 26%, #c3d2d6 26%, #a3b7bf 48%, #d9b286 48%, #b57245 70%, #36434a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-link {
+      display: block;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mix-blend-mode: soft-light;
+    }
+
+    .hero-copy {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      background: rgba(247, 243, 236, 0.94);
+      padding: 16px 18px 14px;
+      border-left: 5px solid var(--teal);
+    }
+
+    .eyebrow {
+      margin: 0 0 7px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      color: var(--teal);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0 0 10px;
+      font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+      font-size: 41px;
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--headline);
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.45;
+      color: #38342f;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.42);
+      padding: 16px 16px 15px;
+    }
+
+    .panel h2,
+    .section-title,
+    .news-title,
+    .opinion-title {
+      margin: 0;
+      color: var(--headline);
+    }
+
+    .panel h2 {
+      font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .panel p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .bullet-list {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .bullet-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      padding-top: 9px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .bullet-list strong {
+      color: var(--rust);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .bullet-list a {
+      display: contents;
+    }
+
+    .navigator {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 24px;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .nav-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: var(--chip);
+      border: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #504b43;
+    }
+
+    .nav-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    .section {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 2px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+      font-size: clamp(28px, 4vw, 34px);
+      line-height: 1.04;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      word-break: keep-all;
+    }
+
+    .section-note {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #46413b;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 18px;
+    }
+
+    .news-card {
+      display: block;
+      min-height: 180px;
+      padding: 16px 16px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.42);
+      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(54, 42, 30, 0.08);
+      border-color: #c7b9a7;
+    }
+
+    .news-media {
+      height: 92px;
+      margin: -16px -16px 14px;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      background: #dfe7e8;
+    }
+
+    .news-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .media-memory img {
+      object-position: center 34%;
+    }
+
+    .media-agent img {
+      object-position: center 24%;
+    }
+
+    .media-cloud img {
+      object-position: center 30%;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .tag {
+      padding: 4px 7px;
+      border: 1px solid #d6cdc0;
+      background: #f8f3eb;
+    }
+
+    .news-title {
+      font-size: 26px;
+      line-height: 1.14;
+      margin-bottom: 9px;
+    }
+
+    .news-title .accent {
+      color: var(--rust);
+    }
+
+    .summary {
+      margin: 0 0 12px;
+      font-size: 15px;
+      line-height: 1.62;
+      color: #3d3933;
+    }
+
+    .summary strong,
+    .impact strong,
+    .watch-card p strong,
+    .watch-points strong,
+    .quote strong {
+      color: #1f1c18;
+      font-weight: 700;
+    }
+
+    .impact {
+      margin: 0 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid var(--teal);
+      font-size: 14px;
+      line-height: 1.55;
+      color: #4d5d60;
+    }
+
+    .source-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .wide-card {
+      grid-column: 1 / -1;
+      min-height: 0;
+      background: linear-gradient(180deg, rgba(226, 238, 240, 0.7), rgba(255, 255, 255, 0.44));
+    }
+
+    .opinion-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .opinion-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(243, 223, 215, 0.72), rgba(255, 255, 255, 0.42));
+    }
+
+    .opinion-title {
+      font-size: 24px;
+      line-height: 1.16;
+      margin-bottom: 10px;
+    }
+
+    .opinion-role {
+      margin: -2px 0 10px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.45;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .quote {
+      margin: 0 0 12px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #403b35;
+    }
+
+    .opinion-meta {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .watch-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 18px;
+    }
+
+    .watch-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .watch-card.lead {
+      background: linear-gradient(180deg, rgba(226, 238, 240, 0.7), rgba(255, 255, 255, 0.44));
+    }
+
+    .watch-card h3 {
+      margin: 0 0 9px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .watch-card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .watch-points {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .watch-points li {
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 14px;
+      line-height: 1.55;
+      color: #45403a;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1120px) {
+      .page {
+        width: auto;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .section-head,
+      .news-grid,
+      .opinion-wrap,
+      .watch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        gap: 8px;
+      }
+
+      .news-media {
+        height: 86px;
+      }
+
+      .wide-card {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topline">
+      <div class="folio">A1</div>
+      <div class="masthead">
+        2026年6月5日 星期五<br />
+        AI MORNING BRIEF · 正式版
+      </div>
+    </header>
+
+    <div class="ribbon"><span>AI News Brief</span></div>
+
+    <section class="hero">
+      <a class="hero-link" href="https://openai.com/index/chatgpt-memory-dreaming/" target="_blank" rel="noopener noreferrer">
+        <article class="hero-main">
+          <div class="hero-copy">
+            <p class="eyebrow">头版导读 · 今天先看什么</p>
+            <h1 class="hero-title">OpenAI 把“记忆”推到产品中心</h1>
+            <p class="hero-sub">这波更新最重要的不是模型又强了一点，而是 AI 助手开始更像一个会持续记住你、理解你上下文的长期工具。</p>
+          </div>
+        </article>
+      </a>
+
+      <aside class="hero-side">
+        <section class="panel">
+          <p class="eyebrow">今日导读</p>
+          <h2>先看这 4 条</h2>
+          <p>如果你只有 2 分钟，先看 OpenAI 的记忆更新，再看微软的 Agent 工作流，接着看中国云厂商怎样把模型继续压进产品里。</p>
+          <ul class="bullet-list">
+            <li><a href="https://openai.com/index/chatgpt-memory-dreaming/" target="_blank" rel="noopener noreferrer"><strong>01</strong><span>OpenAI：记忆能力变成默认产品体验</span></a></li>
+            <li><a href="https://news.microsoft.com/source/asia/2026/06/03/microsoft-build-2026-be-yourself-at-work/" target="_blank" rel="noopener noreferrer"><strong>02</strong><span>微软：Agent 不只会聊天，而是准备接工作流</span></a></li>
+            <li><a href="https://cloud.baidu.com/news/productNews" target="_blank" rel="noopener noreferrer"><strong>03</strong><span>中国大厂：继续把模型做成企业产品与云入口</span></a></li>
+            <li><a href="https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/" target="_blank" rel="noopener noreferrer"><strong>04</strong><span>NVIDIA：Physical AI 把网页 Agent 叙事拉向现实世界</span></a></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">阅读说明</p>
+          <h2>怎么读这版</h2>
+          <p>版面顺序为“总览 → 大公司动向 → 产品与模型 → 应用趋势 → 观点 → 今日结论”。每条新闻卡都可以直接点击跳到原始来源。</p>
+        </section>
+      </aside>
+    </section>
+
+    <nav class="navigator">
+      <a class="nav-chip" href="#companies">大公司动向</a>
+      <a class="nav-chip" href="#products">产品与模型发布</a>
+      <a class="nav-chip" href="#applications">新技术与新应用</a>
+      <a class="nav-chip" href="#opinions">热门博主言论</a>
+      <a class="nav-chip" href="#watch">今日结论</a>
+    </nav>
+
+    <section class="section" id="companies">
+      <div class="section-head">
+        <h2 class="section-title">大公司动向</h2>
+        <div class="section-note">这一栏先解决用户最常问的两个问题：大厂今天干了什么、这对产品方向意味着什么。中美混排在一起，优先按“影响力”而不是按国家拆开。</div>
+      </div>
+
+      <div class="news-grid">
+        <a class="news-card wide-card" href="https://openai.com/index/chatgpt-memory-dreaming/" target="_blank" rel="noopener noreferrer">
+          <div class="news-media media-memory">
+            <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fopenai.com%2Findex%2Fchatgpt-memory-dreaming%2F?w=1600" alt="OpenAI ChatGPT memory 新闻原网页截图" loading="lazy" referrerpolicy="no-referrer" />
+          </div>
+          <div class="tag-row">
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-04</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">ChatGPT 记忆更新：<span class="accent">AI 助手开始像“长期陪跑型产品”</span></h3>
+          <p class="summary">OpenAI 这次强调的是模型如何更主动地利用<strong>长期记忆</strong>组织回答，而不是单次会话里的即时推理。它让<strong>“继续理解你”</strong>变成产品卖点，而不是隐藏功能。</p>
+          <p class="impact">为什么重要：这类更新会直接影响<strong>搜索、办公、教育和个人助理</strong>的产品形态，行业竞争点也会从“回答得对不对”继续转向<strong>“是否持续懂你”</strong>。</p>
+          <div class="source-line">
+            <span>来源：OpenAI 官方</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+
+        <a class="news-card" href="https://news.microsoft.com/source/asia/2026/06/03/microsoft-build-2026-be-yourself-at-work/" target="_blank" rel="noopener noreferrer">
+          <div class="news-media media-agent">
+            <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnews.microsoft.com%2Fsource%2Fasia%2F2026%2F06%2F03%2Fmicrosoft-build-2026-be-yourself-at-work%2F?w=1600" alt="Microsoft Build 2026 新闻原网页截图" loading="lazy" referrerpolicy="no-referrer" />
+          </div>
+          <div class="tag-row">
+            <span class="tag">Microsoft</span>
+            <span class="tag">2026-06-03</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">微软继续押注 <span class="accent">Agent 工作流</span></h3>
+          <p class="summary">Build 2026 后的公开材料继续把重点放在<strong>“模型 + 工具链 + Windows/办公整合”</strong>，核心不是再讲模型本身，而是让 AI 直接<strong>接任务、调工具、跑流程</strong>。</p>
+          <p class="impact">读者视角：这说明企业侧最值钱的，不再是一个单点聊天入口，而是 AI 能否成为<strong>默认协作层</strong>。</p>
+          <div class="source-line">
+            <span>来源：Microsoft News</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+
+        <a class="news-card" href="https://www.alibabacloud.com/blog/alibaba-cloud-launches-qwen-cloud-for-global-markets_603191" target="_blank" rel="noopener noreferrer">
+          <div class="news-media media-cloud">
+            <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.alibabacloud.com%2Fblog%2Falibaba-cloud-launches-qwen-cloud-for-global-markets_603191?w=1600" alt="阿里云 Qwen Cloud 新闻原网页截图" loading="lazy" referrerpolicy="no-referrer" />
+          </div>
+          <div class="tag-row">
+            <span class="tag">Alibaba Cloud</span>
+            <span class="tag">2026-05-28</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">阿里云推进 <span class="accent">Qwen Cloud</span> 出海</h3>
+          <p class="summary">阿里云持续把<strong>通义系模型和云服务</strong>打包成全球市场入口。这不是单一模型新闻，更像是国内模型体系如何被包装成<strong>完整服务</strong>的一次路线展示。</p>
+          <p class="impact">为什么值得看：相比模型榜单，这类<strong>“服务出口”</strong>更接近真实商业化能力。</p>
+          <div class="source-line">
+            <span>来源：Alibaba Cloud Blog</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+
+        <a class="news-card" href="https://cloud.baidu.com/news/productNews" target="_blank" rel="noopener noreferrer">
+          <div class="tag-row">
+            <span class="tag">Baidu Cloud</span>
+            <span class="tag">2026-06-05</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">百度智能云延续 <span class="accent">企业 AI 助手</span> 节奏</h3>
+          <p class="summary">百度智能云产品动态页近期仍在沿着<strong>企业助手、工作台和平台能力更新</strong>推进，公开层面的关键词依然是<strong>“产品化”</strong>和<strong>“企业服务”</strong>。</p>
+          <p class="impact">读者视角：这说明中国大厂公开发布的重心，仍然偏向把<strong>模型能力包装进已有业务体系</strong>。</p>
+          <div class="source-line">
+            <span>来源：百度智能云产品动态</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <h2 class="section-title">产品与模型发布</h2>
+        <div class="section-note">这一栏只放“你可以理解成某种新能力上线”的内容，避免把公司战略、观点和技术趋势混在一起。</div>
+      </div>
+
+      <div class="news-grid">
+        <a class="news-card" href="https://github.blog/" target="_blank" rel="noopener noreferrer">
+          <div class="tag-row">
+            <span class="tag">GitHub</span>
+            <span class="tag">2026-06-01 ~ 06-02</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">Copilot 从“写代码”继续走向 <span class="accent">接管开发片段</span></h3>
+          <p class="summary">GitHub 最近的公开更新继续沿着 agent 化开发前进，重点不再只是补全，而是自动化、应用和开发流深度接合。</p>
+          <p class="impact">为什么重要：代码生成已经逐步变成默认配置，下一阶段竞争点是 AI 能不能负责一小段完整开发流程。</p>
+          <div class="source-line">
+            <span>来源：GitHub Blog</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+
+        <a class="news-card" href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">
+          <div class="tag-row">
+            <span class="tag">Anthropic</span>
+            <span class="tag">2026-06-01 ~ 06-03</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">Anthropic 保持 <span class="accent">高频上新</span> 节奏</h3>
+          <p class="summary">Claude 相关更新仍在围绕开发者能力、企业场景和接口能力扩展推进。过去几天的新闻密度说明它仍在积极抢平台位。</p>
+          <p class="impact">用户关注点：即使没有一个“爆点标题”，稳定高频发布本身就是竞争信号。</p>
+          <div class="source-line">
+            <span>来源：Anthropic News</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+
+        <a class="news-card" href="https://cloud.tencent.com/document/product/1759/104191" target="_blank" rel="noopener noreferrer">
+          <div class="tag-row">
+            <span class="tag">Tencent Cloud</span>
+            <span class="tag">最近更新页 2026-05-20</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">腾讯混元公开更新更偏 <span class="accent">平台迁移与集成</span></h3>
+          <p class="summary">腾讯当前公开可见的节奏，更像是在把模型能力稳态接入现有云平台和产品矩阵，而不是频繁追求面向公众的爆款首发。</p>
+          <p class="impact">这类更新不一定最热闹，但更能反映产品真正往哪儿落。</p>
+          <div class="source-line">
+            <span>来源：腾讯云文档</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="applications">
+      <div class="section-head">
+        <h2 class="section-title">新技术与新应用</h2>
+        <div class="section-note">这里讲“趋势怎么落成产品”而不是重复新闻标题。适合想快速判断接下来该关注什么方向的人读。</div>
+      </div>
+
+      <div class="news-grid">
+        <a class="news-card" href="https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/" target="_blank" rel="noopener noreferrer">
+          <div class="tag-row">
+            <span class="tag">NVIDIA</span>
+            <span class="tag">2026年6月初</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">Physical AI：<span class="accent">网页 Agent 正在向现实世界延伸</span></h3>
+          <p class="summary">NVIDIA 把机器人技能学习、视觉理解和 agent 技术继续放在一条叙事线上，意味着“未来感”不再只来自聊天窗口，而开始来自真实设备操作。</p>
+          <p class="impact">为什么值得看：这是 AI 从软件界面走向物理世界的典型信号。</p>
+          <div class="source-line">
+            <span>来源：NVIDIA Blog</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+
+        <a class="news-card" href="https://openai.com/index/chatgpt-memory-dreaming/" target="_blank" rel="noopener noreferrer">
+          <div class="tag-row">
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-04</span>
+            <span class="tag">事实报道</span>
+          </div>
+          <h3 class="news-title">长期记忆：<span class="accent">从附加功能变成核心体验</span></h3>
+          <p class="summary">记忆系统如果被做好，会改变用户对 AI 的使用频率和依赖方式。它不只是“方便一点”，而是决定 AI 是否能成为默认工具层。</p>
+          <p class="impact">应用层含义：教育、搜索、办公和个人助理会最先被这种变化重塑。</p>
+          <div class="source-line">
+            <span>来源：OpenAI 官方</span>
+            <span>点击查看原文</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="opinions">
+      <div class="section-head">
+        <h2 class="section-title">热门博主言论</h2>
+        <div class="section-note">这一栏只保留“有代表性的观点”，并和事实报道分开。这样读者不会把作者判断误读成新闻本身。</div>
+      </div>
+
+      <div class="opinion-wrap">
+        <a class="opinion-card" href="https://simonwillison.net/" target="_blank" rel="noopener noreferrer">
+          <p class="eyebrow">观点评论</p>
+          <h3 class="opinion-title">Simon Willison：工作流封装比榜单名次更重要</h3>
+          <p class="opinion-role">独立开发者、Datasette 作者、长期跟踪 LLM 产品与开源生态</p>
+          <p class="quote">他的代表性判断是，真正值得盯的不是“今天谁多了几分”，而是谁把模型能力稳定地做成了可复用的产品和流程。换句话说，模型排名本身只能说明阶段性能力，而能不能被可靠调用、能不能嵌进真实工作里，才决定了一项 AI 能不能长期留下来。这个视角很适合今天这份晨报，因为 OpenAI 的记忆更新、GitHub 的 agent 化、微软的工作流整合，本质上都在往“可持续使用”走。</p>
+          <div class="opinion-meta">来源主页 · 点击查看原始站点</div>
+        </a>
+
+        <a class="opinion-card" href="https://www.oneusefulthing.org/" target="_blank" rel="noopener noreferrer">
+          <p class="eyebrow">观点评论</p>
+          <h3 class="opinion-title">Ethan Mollick：AI 价值取决于组织是否重构流程</h3>
+          <p class="opinion-role">沃顿商学院教授、长期研究 AI 对教育与组织管理的影响</p>
+          <p class="quote">他的长期主线一直很稳定：AI 的真正收益，往往来自团队和组织是否愿意围绕它重新设计工作方式，而不是偶尔用一次工具。放到今天这份简报里看，这句话的现实对应很强，因为无论是记忆系统、Agent 工作流，还是企业云平台的模型接入，最终比拼的都不是“能不能演示”，而是“组织愿不愿意真的让它接入日常流程”。他关注的不是炫技，而是 adoption，也就是一个技术究竟如何进入真实机构。</p>
+          <div class="opinion-meta">来源主页 · 点击查看原始站点</div>
+        </a>
+
+        <a class="opinion-card" href="https://www.interconnects.ai/" target="_blank" rel="noopener noreferrer">
+          <p class="eyebrow">观点评论</p>
+          <h3 class="opinion-title">Interconnects：Agent 很强，但落地瓶颈还在评测与容错</h3>
+          <p class="opinion-role">AI 研究评论作者，关注模型能力评估、系统设计与产业落地</p>
+          <p class="quote">这类作者最近反复提醒的一点是，Agent 叙事已经很热，但真正上线时，成本、稳定性和错误恢复仍是最容易被低估的问题。也就是说，一个产品看起来越像“会自己干活”，越需要背后有扎实的评测和安全边界，否则用户一旦把它放进真实任务里，问题就会从“答得不够好”升级成“执行错了怎么办”。这个提醒刚好给今天的热潮降温了一点，让版面不至于只剩下乐观叙事。</p>
+          <div class="opinion-meta">来源主页 · 点击查看原始站点</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="watch">
+      <div class="section-head">
+        <h2 class="section-title">今日学到了什么</h2>
+        <div class="section-note">这一栏不再只是“再看三条提醒”，而是把今天整份晨报归纳成几个真正能带走的判断，帮助读者快速形成结论。</div>
+      </div>
+
+      <div class="watch-grid">
+        <article class="watch-card lead">
+          <h3>今天最明确的一课：AI 竞争点正在从“会回答”转向“会持续服务你”</h3>
+          <p>今天这份报纸里最一致的信号，是各家都在把 AI 从一次性的对话工具，往长期记忆、默认入口和可执行工作流推进。真正拉开差距的，不再只是模型答题能力，而是产品是否能持续理解用户并接住真实任务。</p>
+          <ul class="watch-points">
+            <li>OpenAI 说明“记忆”正在成为核心体验，而不只是附加功能。</li>
+            <li>微软和 GitHub 说明“Agent”正在从演示能力变成工作流能力。</li>
+            <li>中国厂商的公开节奏则提示，模型价值越来越通过产品化和平台化体现。</li>
+          </ul>
+        </article>
+        <article class="watch-card">
+          <h3>读者可以带走的 3 个结论</h3>
+          <ul class="watch-points">
+            <li><strong>结论一：</strong>未来几轮 headline 可能不再是“谁又刷了新分”，而是谁把 AI 做成了默认工作界面。</li>
+            <li><strong>结论二：</strong>中国市场更值得盯的是产品爆点，不只是底模参数或平台更新。</li>
+            <li><strong>结论三：</strong>如果 Physical AI 继续升温，下一阶段“有未来感”的 AI 新闻会越来越多地来自现实世界操作。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      本页为 2026-06-05 AI 晨报正式 HTML 版。当前版式支持分区顺读、来源直达和后续按日更新复用。
+    </footer>
+  </main>
+</body>
+</html>

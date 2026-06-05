@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" fill="none">
+  <rect width="1200" height="420" fill="#3D555C"/>
+  <rect width="1200" height="420" fill="url(#paint0_linear)"/>
+  <rect x="84" y="70" width="348" height="272" rx="28" fill="#F7F3EC" fill-opacity=".94"/>
+  <rect x="124" y="118" width="176" height="20" rx="10" fill="#BFD7CE"/>
+  <rect x="124" y="157" width="246" height="20" rx="10" fill="#D8E8EC"/>
+  <rect x="124" y="196" width="222" height="20" rx="10" fill="#D8E8EC"/>
+  <rect x="124" y="235" width="198" height="20" rx="10" fill="#D8E8EC"/>
+  <path d="M552 118h194v44H552zM804 118h194v44H804zM678 198h194v44H678z" fill="#203039" fill-opacity=".5"/>
+  <path d="M648 140c44 0 78 34 78 78s-34 78-78 78-78-34-78-78 34-78 78-78Z" fill="#A5BF9B" fill-opacity=".88"/>
+  <path d="M650 178v82M608 220h84" stroke="#F7F3EC" stroke-width="18" stroke-linecap="round"/>
+  <text x="84" y="378" fill="#F7F3EC" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">AGENT</text>
+  <text x="320" y="378" fill="#E4EFEA" font-family="Arial, Helvetica, sans-serif" font-size="34">workflow stack</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="97" y1="47" x2="1068" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#688A94"/>
+      <stop offset=".48" stop-color="#D8E8EC"/>
+      <stop offset="1" stop-color="#6B8766"/>
+    </linearGradient>
+  </defs>
+</svg>

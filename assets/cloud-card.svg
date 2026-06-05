@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" fill="none">
+  <rect width="1200" height="420" fill="#73614F"/>
+  <rect width="1200" height="420" fill="url(#paint0_linear)"/>
+  <rect x="126" y="112" width="314" height="208" rx="26" fill="#F7F3EC" fill-opacity=".92"/>
+  <path d="M604 140h504v168H604z" fill="#38515B" fill-opacity=".42"/>
+  <path d="M644 204c0-34 28-62 62-62 11 0 21 3 30 8 13-20 35-34 61-34 39 0 71 32 71 71v4c26 2 47 24 47 51 0 29-24 53-53 53H702c-32 0-58-26-58-58 0-13 4-24 10-33-7-10-10-22-10-34Z" fill="#DCECEF"/>
+  <rect x="168" y="150" width="230" height="22" rx="11" fill="#C9B79E"/>
+  <rect x="168" y="192" width="188" height="22" rx="11" fill="#DFD1BD"/>
+  <rect x="168" y="234" width="212" height="22" rx="11" fill="#DFD1BD"/>
+  <text x="124" y="372" fill="#F7F3EC" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">CLOUD</text>
+  <text x="366" y="372" fill="#F3E8D6" font-family="Arial, Helvetica, sans-serif" font-size="34">platform rollout</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="64" y1="56" x2="1082" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B59371"/>
+      <stop offset=".45" stop-color="#DFD1BD"/>
+      <stop offset="1" stop-color="#5F7983"/>
+    </linearGradient>
+  </defs>
+</svg>
