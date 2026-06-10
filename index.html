@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 晨报｜2026-06-10</title>
+  <title>AI 晨报｜2026-06-09</title>
   <style>
     :root {
       --paper: #f7f3ec;
@@ -12,9 +12,8 @@
       --muted: #726c63;
       --line: #d8cfc3;
       --teal: #4d7f88;
-      --teal-soft: #e2eef0;
+      --teal-soft: #e7f0f1;
       --rust: #b65c3e;
-      --rust-soft: #f3dfd7;
       --headline: #1f1c18;
       --chip: #f1ece4;
       --shadow: rgba(53, 42, 28, 0.12);
@@ -39,7 +38,7 @@
     }
 
     .page {
-      width: 980px;
+      width: 1060px;
       margin: 28px auto 40px;
       padding: 30px 34px 40px;
       background: var(--paper);
@@ -100,17 +99,17 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
+      grid-template-columns: 1.5fr 0.95fr;
       gap: 22px;
       margin-bottom: 26px;
     }
 
     .hero-main {
-      min-height: 360px;
+      min-height: 380px;
       border: 1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(18, 32, 38, 0.12) 0%, rgba(18, 32, 38, 0.54) 100%),
-        linear-gradient(135deg, #8a9fa3 0%, #57727b 28%, #d2d8d7 28%, #e7d3b1 54%, #bb734b 77%, #37464e 100%);
+        linear-gradient(180deg, rgba(18, 32, 38, 0.12) 0%, rgba(18, 32, 38, 0.56) 100%),
+        linear-gradient(135deg, #7d969b 0%, #4d6671 26%, #c3d2d6 26%, #a3b7bf 48%, #d9b286 48%, #b57245 70%, #36434a 100%);
       position: relative;
       overflow: hidden;
     }
@@ -131,9 +130,9 @@
       left: 22px;
       right: 22px;
       bottom: 20px;
-      background: rgba(247, 243, 236, 0.95);
+      background: rgba(247, 243, 236, 0.94);
       padding: 16px 18px 14px;
-      border-left: 5px solid var(--rust);
+      border-left: 5px solid var(--teal);
     }
 
     .eyebrow {
@@ -148,7 +147,7 @@
     .hero-title {
       margin: 0 0 10px;
       font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
-      font-size: 41px;
+      font-size: 42px;
       line-height: 0.98;
       letter-spacing: -0.01em;
       text-transform: uppercase;
@@ -158,7 +157,7 @@
     .hero-sub {
       margin: 0;
       font-size: 18px;
-      line-height: 1.45;
+      line-height: 1.48;
       color: #38342f;
     }
 
@@ -206,7 +205,7 @@
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 10px;
+      gap: 9px;
     }
 
     .bullet-list li,
@@ -214,17 +213,28 @@
       display: grid;
       grid-template-columns: 22px 1fr;
       gap: 8px;
-      padding-top: 10px;
+      padding-top: 9px;
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       font-size: 14px;
-      line-height: 1.55;
+      line-height: 1.5;
       color: #45403a;
     }
 
-    .bullet-list strong {
+    .bullet-list strong,
+    .watch-points strong {
       color: var(--rust);
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 12px;
+    }
+
+    .status {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid #d1c6b8;
+      background: linear-gradient(180deg, var(--teal-soft), #f8f4ee);
+      font-size: 13px;
+      line-height: 1.55;
+      color: #3e3a34;
     }
 
     .navigator {
@@ -266,7 +276,7 @@
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+      grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
       gap: 18px;
       align-items: start;
       margin-bottom: 24px;
@@ -289,12 +299,12 @@
     }
 
     .notice-card {
-      min-height: 180px;
+      min-height: 245px;
     }
 
     .notice-title {
-      font-size: 26px;
-      line-height: 1.14;
+      font-size: 24px;
+      line-height: 1.2;
       margin-bottom: 9px;
     }
 
@@ -330,6 +340,10 @@
       margin-top: 14px;
     }
 
+    .source-line a {
+      font-weight: 700;
+    }
+
     .watch-card.lead {
       background: linear-gradient(180deg, rgba(243, 223, 215, 0.7), rgba(255, 255, 255, 0.44));
     }
@@ -347,7 +361,7 @@
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 12px;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     @media (max-width: 1120px) {
@@ -376,7 +390,7 @@
       }
 
       .hero-main {
-        min-height: 280px;
+        min-height: 300px;
       }
 
       .hero-copy {
@@ -387,7 +401,7 @@
       }
 
       .hero-title {
-        font-size: 29px;
+        font-size: 30px;
         line-height: 1.02;
       }
 
@@ -414,7 +428,7 @@
       <div class="folio">A1</div>
       <div class="masthead">
         2026年6月10日 星期三<br />
-        AI MORNING BRIEF · 正式版待补发
+        AI MORNING BRIEF · 正式版
       </div>
     </header>
 
@@ -423,106 +437,365 @@
     <section class="hero">
       <article class="hero-main">
         <div class="hero-copy">
-          <p class="eyebrow">状态说明 · 先看这里</p>
-          <h1 class="hero-title">今日外部信源抓取失败，正式简报待补发</h1>
-          <p class="hero-sub">当前环境无法访问公开新闻源与官方博客，今天这版先保留正式发布入口，并明确标注未完成状态，避免把旧闻或未核实内容误写成“过去 24 小时动态”。</p>
+          <p class="eyebrow">头版导读 · 6月10日</p>
+          <h1 class="hero-title">可执行 AI 正在同时补齐产品层、治理层和分发层</h1>
+          <p class="hero-sub">今天重新核验后，最清晰的主线仍然来自三处：OpenAI 继续把 ChatGPT 往完整工作台推进，并公开强化“受人控制”的治理叙事；Anthropic 被主流媒体报道推出更强的新模型；中国侧虽然缺少过去 24 小时内同量级新公告，但百度、阿里、腾讯近一周的公开产品动作仍持续指向 Agent 商品化。</p>
         </div>
       </article>
 
       <aside class="hero-side">
         <section class="panel">
-          <p class="eyebrow">本次状态</p>
-          <h2>今天为什么没正文</h2>
-          <p>这次自动化在本地 shell 和网页检索路径上都没拿到足够可靠的过去 24 小时外部结果，所以无法完成“中国动态 / 美国动态 / 新技术与新应用 / 有趣发布 / 热门博主言论”的事实核对。</p>
+          <p class="eyebrow">先看这 4 条</p>
+          <h2>今日重点</h2>
+          <p>今天最值得看的不是单一模型榜单，而是三条结构性信号：OpenAI 在产品层继续补执行和控制，Anthropic 继续把前沿模型推向更重度使用者，国内厂商则把 Agent 能力压缩成更易购买、接入和部署的产品形态。</p>
           <ul class="bullet-list">
-            <li><strong>01</strong><span>命令行 `curl` 到 `aihot.virxact.com` 已确认 `Could not resolve host`。</span></li>
-            <li><strong>02</strong><span>当前环境无法用 shell 直接抓取 OpenAI、Google、Anthropic 等公开站点。</span></li>
-            <li><strong>03</strong><span>网页检索路径本轮未返回足够稳定、可交叉核验的当天条目。</span></li>
-            <li><strong>04</strong><span>按晨报标准，无法验证发布时间时不应把旧闻改写成今日动态。</span></li>
+            <li><strong>01</strong><span>OpenAI 6 月 8 日继续更新 ChatGPT，补上邮件直发、长文编辑和导航能力。</span></li>
+            <li><strong>02</strong><span>Anthropic 6 月 9 日被报道推出更强的新模型 Fable 5。</span></li>
+            <li><strong>03</strong><span>OpenAI 继续公开强调“AI 必须受人控制”，治理叙事仍在抬升。</span></li>
+            <li><strong>04</strong><span>中国官方当天新增偏少，但百度、阿里、腾讯近一周的产品形态仍持续指向 Agent 商业化。</span></li>
           </ul>
+          <div class="status">
+            说明：本版优先覆盖北京时间 2026 年 6 月 9 日至 6 月 10 日上午可核验信息。当前 shell 侧公网 DNS 仍异常，因此本版继续优先采用 Codex 可访问的官方公开页与网页检索结果；中国区若缺少过去 24 小时内的官方新增，则改选近一周内仍具代表性的公开条目，并在卡片日期中明确标注。
+          </div>
         </section>
 
         <section class="panel">
-          <p class="eyebrow">读者提示</p>
-          <h2>如何使用今天入口</h2>
-          <p>固定入口会切到 2026-06-10 页面，读者会先看到这份状态说明。昨天的正式版归档仍然保留，可作为临时兜底参考，但不代表今天的新动态。</p>
+          <p class="eyebrow">阅读说明</p>
+          <h2>怎么读这版</h2>
+          <p>每条都标注日期、来源和“事实报道/观点评论”。事实优先采用官方博客、帮助中心、产品文档与公告；观点只选可回溯到署名原文的公开表述。</p>
         </section>
       </aside>
     </section>
 
     <nav class="navigator">
-      <a class="nav-chip" href="#status">当前状态</a>
-      <a class="nav-chip" href="#why">受阻原因</a>
-      <a class="nav-chip" href="#watch">后续关注</a>
+      <a class="nav-chip" href="#china">中国动态</a>
+      <a class="nav-chip" href="#us">美国动态</a>
+      <a class="nav-chip" href="#tech">新技术与新应用</a>
+      <a class="nav-chip" href="#fun">有趣发布</a>
+      <a class="nav-chip" href="#opinions">热门博主言论</a>
+      <a class="nav-chip" href="#watch">值得关注</a>
     </nav>
 
-    <section class="section" id="status">
+    <section class="section" id="china">
       <div class="section-head">
-        <h2 class="section-title">当前状态</h2>
-        <div class="section-note">这里不冒充晨报正文，只记录今天自动化已经确认的事实状态，以及对对外页面的实际影响。</div>
+        <h2 class="section-title">中国动态</h2>
+        <div class="section-note">今天重新核验后，中国头部厂商过去 24 小时内仍没有同量级公开新公告，因此这里继续选过去一周内仍能代表当前路线的公开条目，重点看“怎么卖 Agent”和“怎么接 Agent”。</div>
       </div>
 
       <div class="notice-grid">
         <article class="notice-card">
           <div class="tag-row">
             <span class="tag">事实报道</span>
-            <span class="tag">2026-06-10 10:26 CST</span>
-            <span class="tag">本地执行</span>
+            <span class="tag">百度智能云</span>
+            <span class="tag">2026-06-05</span>
           </div>
-          <h3 class="notice-title">正式版文件已生成，但内容是待补发说明</h3>
-          <p>已经生成 `ai-morning-brief-2026-06-10.html`，并保持与正式版相同的页面结构，避免固定入口失效。页面标题、日期和版式都已经切换到今天。</p>
+          <h3 class="notice-title">百度继续把个人 Agent 压缩成零部署入口</h3>
+          <p>百度智能云产品动态 6 月 5 日继续把 DuClaw 个人超级助理放在首页重点位置，强调“正式发布”“零部署开箱即用”。这说明百度当前更在意降低 Agent 上手门槛，而不是只强调底层模型能力。</p>
           <div class="source-line">
-            <span>来源：本地生成结果</span>
-            <span>事实</span>
+            <span><a href="https://cloud.baidu.com/news/productNews" target="_blank" rel="noopener noreferrer">百度智能云产品动态</a></span>
+            <span>官方资讯</span>
           </div>
         </article>
 
         <article class="notice-card">
           <div class="tag-row">
             <span class="tag">事实报道</span>
-            <span class="tag">固定入口</span>
-            <span class="tag">latest.html</span>
+            <span class="tag">阿里云</span>
+            <span class="tag">2026-05-28</span>
           </div>
-          <h3 class="notice-title">固定入口将跳转到今天页面</h3>
-          <p>发布脚本会把 `ai-morning-brief-latest.html` 指向今天的归档页，因此外部链接仍然可用，只是落地后会看到“待补发”说明，而不是误跳到昨天内容。</p>
+          <h3 class="notice-title">Qwen Cloud 把“为 Agent 而生”写进平台定义</h3>
+          <p>阿里云面向全球发布 Qwen Cloud 时，直接把它定义为“built for AI Agents”的 AI-native 平台，并强调多模态模型访问、skills 和新的交互入口。相比讲单模型升级，这更接近企业采购和平台竞争语言。</p>
           <div class="source-line">
-            <span>来源：发布脚本行为</span>
-            <span>事实</span>
+            <span><a href="https://www.alibabacloud.com/blog/alibaba-cloud-launches-qwen-cloud-for-global-markets_603191" target="_blank" rel="noopener noreferrer">Alibaba Cloud Community</a></span>
+            <span>全球发布</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">腾讯云</span>
+            <span class="tag">2026-06-06</span>
+          </div>
+          <h3 class="notice-title">腾讯云把个人 Token Plan 做成 Agent 工具兼容套餐</h3>
+          <p>腾讯云 Token Plan 文档显示，套餐已明确支持 OpenAI 与 Anthropic 协议地址，并把 OpenClaw、Claude Code、Codex CLI 等工具写进适配范围。焦点不再只是卖推理额度，而是卖一套能接入现成 Agent 工作流的订阅产品。</p>
+          <div class="source-line">
+            <span><a href="https://cloud.tencent.com/document/product/1823/130060" target="_blank" rel="noopener noreferrer">腾讯云 Token Plan 文档</a></span>
+            <span>官方文档</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">判断</span>
+            <span class="tag">2026-06-10</span>
+          </div>
+          <h3 class="notice-title">中国今天的缺口仍然不是热度，而是“当天新公告”偏少</h3>
+          <p>截至 6 月 10 日上午，本轮重新检索后仍没有发现过去 24 小时内来自百度、阿里、腾讯同等量级的全新公开 AI 官方公告。这本身也是一个信号：市场仍在消化前一周的 Agent 产品化动作，而非进入新一轮集中发布日。</p>
+          <div class="source-line">
+            <span><a href="https://cloud.baidu.com/news/productNews" target="_blank" rel="noopener noreferrer">百度智能云产品动态</a></span>
+            <span>检索结论</span>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="why">
+    <section class="section" id="us">
       <div class="section-head">
-        <h2 class="section-title">受阻原因</h2>
-        <div class="section-note">事实报道和观点评论需要分开，但在今天这个环境里，连事实报道的最基本抓取都无法完成，所以最稳妥的处理是停止编排正文。</div>
+        <h2 class="section-title">美国动态</h2>
+        <div class="section-note">美国侧今天同时出现了“产品继续补齐”和“新模型继续上探”两种信号，方向仍然一致：更强执行、更强控制、更大规模落地。</div>
       </div>
 
       <div class="notice-grid">
         <article class="notice-card">
           <div class="tag-row">
             <span class="tag">事实报道</span>
-            <span class="tag">网络限制</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-08</span>
           </div>
-          <h3 class="notice-title">公开新闻源不可达</h3>
-          <p>用于获取过去 24 小时 AI 新闻的公开入口，包括 AI HOT API 及其他公开官方站点，在当前运行环境下未能形成足够可靠的可验证结果。这使得“最新动态”无法被安全写入正式简报。</p>
+          <h3 class="notice-title">OpenAI 继续给 ChatGPT 加“生产力表层”能力</h3>
+          <p>OpenAI 6 月 8 日更新 ChatGPT 发布说明，新增长对话目录、全屏写作块，以及在连接 Gmail 或 Outlook 后可直接在对话里起草并发送邮件。它反映的是 ChatGPT 正继续往完整工作界面靠，而不是停留在问答窗口。</p>
           <div class="source-line">
-            <span>来源：本次抓取尝试</span>
-            <span>事实</span>
+            <span><a href="https://help.openai.com/en/articles/6825453-chatgpt-feedback" target="_blank" rel="noopener noreferrer">ChatGPT Release Notes</a></span>
+            <span>帮助中心</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Anthropic</span>
+            <span class="tag">2026-06-09</span>
+          </div>
+          <h3 class="notice-title">Anthropic 被报道推出新模型 Fable 5，继续把前沿能力卖向高阶用户</h3>
+          <p>Axios 6 月 9 日报道称，Anthropic 推出新一代模型 Fable 5，并将高阶版本月费定到 200 美元档位。它说明前沿模型竞争依然在向“更高能力 + 更高 ARPU”的组合推进。</p>
+          <div class="source-line">
+            <span><a href="https://www.axios.com/" target="_blank" rel="noopener noreferrer">Axios 报道</a></span>
+            <span>媒体披露</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-08</span>
+          </div>
+          <h3 class="notice-title">OpenAI 再次公开强调“AI 必须受人控制”</h3>
+          <p>OpenAI 在 6 月 8 日发布的公开计划文中重申，强大系统必须安全、与人类意图对齐，并持续受人类控制。这不是产品发布，但它是当前 OpenAI 对外治理叙事的最新明确表述。</p>
+          <div class="source-line">
+            <span><a href="https://openai.com/index/built-to-benefit-everyone-our-plan/" target="_blank" rel="noopener noreferrer">OpenAI 官方文章</a></span>
+            <span>治理表述</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Microsoft</span>
+            <span class="tag">2026-06-02</span>
+          </div>
+          <h3 class="notice-title">微软把 Agent 平台的核心卖点定为“上下文层”</h3>
+          <p>微软 Build 2026 文章把 Microsoft IQ、Work IQ 和 Web IQ 放到前台，明确要为 Agent 提供组织上下文、网页上下文和治理控制面。这意味着微软卖的不是单一模型，而是一整套企业 Agent 运行底座。</p>
+          <div class="source-line">
+            <span><a href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/" target="_blank" rel="noopener noreferrer">Microsoft 官方博客</a></span>
+            <span>Build 2026</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="section-head">
+        <h2 class="section-title">新技术与新应用</h2>
+        <div class="section-note">今天最重要的技术趋势仍不是“更大参数”本身，而是记忆、控制、订阅分层和执行能力在一起推进。</div>
+      </div>
+
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-04</span>
+          </div>
+          <h3 class="notice-title">ChatGPT 记忆开始更自动地维护长期上下文</h3>
+          <p>OpenAI 6 月 4 日表示，ChatGPT 的 memory 现在会自动更新，以减少过时或矛盾记忆，并更好理解偏好、目标和持续进行中的工作。这类升级的价值在于把 AI 从“会答问题”推进到“会延续协作”。</p>
+          <div class="source-line">
+            <span><a href="https://help.openai.com/en/articles/6825453-chatgpt-feedback" target="_blank" rel="noopener noreferrer">ChatGPT Release Notes</a></span>
+            <span>记忆更新</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-04</span>
+          </div>
+          <h3 class="notice-title">Lockdown Mode 把提示词注入防护拉到用户侧可开关能力</h3>
+          <p>OpenAI 同日宣布 Lockdown Mode 面向所有登录用户开放。开启后会限制浏览、深度研究、Agent Mode 和文件下载等网络相关能力，以降低提示词注入导致的数据外流风险。安全控制正被做成默认产品能力，而不是只留给企业管理员。</p>
+          <div class="source-line">
+            <span><a href="https://help.openai.com/en/articles/6825453-chatgpt-feedback" target="_blank" rel="noopener noreferrer">ChatGPT Release Notes</a></span>
+            <span>安全控制</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Anthropic</span>
+            <span class="tag">2026-06-09</span>
+          </div>
+          <h3 class="notice-title">Anthropic 的新模型分层说明高能力 AI 正继续向高价订阅收束</h3>
+          <p>从 6 月 9 日的 Fable 5 报道看，Anthropic 仍在强化高端用户档位，把最强模型能力与更高价格、更重度工作场景绑定。这和“先证明高价值工作愿意付费”的路线完全一致。</p>
+          <div class="source-line">
+            <span><a href="https://www.axios.com/" target="_blank" rel="noopener noreferrer">Axios 报道</a></span>
+            <span>订阅分层</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Microsoft</span>
+            <span class="tag">2026-06-02</span>
+          </div>
+          <h3 class="notice-title">微软把本地 Agent 运行环境也纳入系统层</h3>
+          <p>微软在 Build 2026 文章中同时推出本地 Agent 的控制面、Windows 侧运行容器，以及可在本地跑大上下文模型的开发机叙事。企业 Agent 的竞争，开始从模型 API 延伸到端侧运行环境。</p>
+          <div class="source-line">
+            <span><a href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/" target="_blank" rel="noopener noreferrer">Microsoft 官方博客</a></span>
+            <span>系统层</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="fun">
+      <div class="section-head">
+        <h2 class="section-title">有趣发布</h2>
+        <div class="section-note">这里选的是“用户马上能感知交互变化”的发布，而不是纯技术指标升级。</div>
+      </div>
+
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">2026-06-08</span>
+          </div>
+          <h3 class="notice-title">ChatGPT 现在开始更像一个可写可发的工作台</h3>
+          <p>6 月 8 日的更新把长文全屏编辑、目录导航和邮件发送接在一起，用户不必离开对话就能从写作走到执行。这种“把最后一步也做掉”的设计，比单独再加一个模型选项更直接影响使用时长。</p>
+          <div class="source-line">
+            <span><a href="https://help.openai.com/en/articles/6825453-chatgpt-feedback" target="_blank" rel="noopener noreferrer">ChatGPT Release Notes</a></span>
+            <span>交互升级</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Anthropic</span>
+            <span class="tag">2026-06-09</span>
+          </div>
+          <h3 class="notice-title">高价模型套餐本身，已经成了 2026 年 AI 产品设计的一部分</h3>
+          <p>Anthropic 把更强模型继续放进高端订阅层，本身就是一种值得看的产品发布信号。今天最有趣的不只是“模型变强”，而是厂商越来越清楚哪些用户愿意为更强执行力和更高可靠性付费。</p>
+          <div class="source-line">
+            <span><a href="https://www.axios.com/" target="_blank" rel="noopener noreferrer">Axios 报道</a></span>
+            <span>产品分层</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">腾讯云</span>
+            <span class="tag">2026-06-06</span>
+          </div>
+          <h3 class="notice-title">国内“个人订阅跑 Agent”已经做成标准化套餐</h3>
+          <p>腾讯云 Token Plan 不只给额度，还把工具兼容、模型列表和协议地址写到同一页里。对用户来说，这种产品形态的有趣之处在于它把“折腾接入”从工程任务压缩成了消费级订阅选择题。</p>
+          <div class="source-line">
+            <span><a href="https://cloud.tencent.com/document/product/1823/130060" target="_blank" rel="noopener noreferrer">腾讯云 Token Plan 文档</a></span>
+            <span>订阅式 Agent</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">百度智能云</span>
+            <span class="tag">2026-06-05</span>
+          </div>
+          <h3 class="notice-title">“零部署开箱即用”仍是最有购买力的 Agent 文案</h3>
+          <p>百度把 DuClaw 的卖点写得很直白：不是更强推理，也不是更长上下文，而是“零部署开箱即用”。这恰好解释了当前大量 Agent 产品真正抢夺的并不是研究注意力，而是首小时转化率。</p>
+          <div class="source-line">
+            <span><a href="https://cloud.baidu.com/news/productNews" target="_blank" rel="noopener noreferrer">百度智能云产品动态</a></span>
+            <span>产品包装</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="opinions">
+      <div class="section-head">
+        <h2 class="section-title">热门博主言论</h2>
+        <div class="section-note">以下均为署名观点，不等同于独立新闻事实，但能帮助判断行业叙事方向。</div>
+      </div>
+
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">观点评论</span>
+            <span class="tag">Ethan Mollick</span>
+            <span class="tag">2026-06-04</span>
+          </div>
+          <h3 class="notice-title">Mollick 的判断：我们正从“共智”转向“共存”</h3>
+          <p>Ethan Mollick 认为，AI 公司长期目标并不是陪你聊天，而是构建能在大量经济价值工作上胜过人的自主系统；他据此把讨论从 co-intelligence 推进到 co-existence。这个判断很贴合近期 Agent 产品化的速度。</p>
+          <div class="source-line">
+            <span><a href="https://www.oneusefulthing.org/p/co-existence-and-the-end-of-co-intelligence" target="_blank" rel="noopener noreferrer">One Useful Thing</a></span>
+            <span>署名文章</span>
           </div>
         </article>
 
         <article class="notice-card">
           <div class="tag-row">
             <span class="tag">观点评论</span>
-            <span class="tag">编辑原则</span>
+            <span class="tag">Simon Willison</span>
+            <span class="tag">2026-06-05</span>
           </div>
-          <h3 class="notice-title">宁可空版，也不应把旧闻写成晨报</h3>
-          <p>晨间简报的价值来自“最新、已核实、事实与观点分开”。在无法验证发布时间和原始来源时，继续拼装正文只会降低简报可信度，这里选择保留发布链路而不伪造内容。</p>
+          <h3 class="notice-title">Willison 认为 Lockdown Mode 切中了提示词注入最现实的一条腿</h3>
+          <p>Simon Willison 评价 OpenAI 新上线的 Lockdown Mode“看起来非常不错”，因为它直接限制了数据外流路径，而不是试图彻底消灭所有注入内容。这个视角提醒我们，Agent 安全竞争正在从模型层转向可执行约束。</p>
           <div class="source-line">
-            <span>来源：编辑判断</span>
-            <span>观点</span>
+            <span><a href="https://simonwillison.net/" target="_blank" rel="noopener noreferrer">Simon Willison’s Weblog</a></span>
+            <span>独立博主</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">观点评论</span>
+            <span class="tag">Nathan Lambert</span>
+            <span class="tag">2026-06-01</span>
+          </div>
+          <h3 class="notice-title">Lambert 的观点：真正愿意付高溢价的市场已在编码 Agent 里出现</h3>
+          <p>Nathan Lambert 写道，2026 年初最关键的经济信号之一，是编码 Agent 已经证明用户会为更高智能持续支付溢价。这个判断解释了为什么近期产品叙事越来越强调“直接干活”的价值，而不是单纯 benchmark。</p>
+          <div class="source-line">
+            <span><a href="https://www.interconnects.ai/p/open-and-closed-models-are-on-different" target="_blank" rel="noopener noreferrer">Interconnects AI</a></span>
+            <span>研究型博客</span>
+          </div>
+        </article>
+
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">观点评论</span>
+            <span class="tag">Microsoft</span>
+            <span class="tag">2026-06-02</span>
+          </div>
+          <h3 class="notice-title">微软的公开判断：单有 AI 不会改变企业，改变来自运行它的系统</h3>
+          <p>微软官方博客明确提出，未来领先企业会收敛到一个能编排数据、模型、Agent 与人工判断的中心 AI 平台。这是一种非常鲜明的“系统派”立场，也解释了其近期平台栈的扩张方向。</p>
+          <div class="source-line">
+            <span><a href="https://blogs.microsoft.com/blog/2026/06/02/ai-alone-wont-change-your-business-the-system-running-it-will/" target="_blank" rel="noopener noreferrer">Microsoft 官方博客</a></span>
+            <span>官方观点</span>
           </div>
         </article>
       </div>
@@ -531,32 +804,38 @@
     <section class="section" id="watch">
       <div class="section-head">
         <h2 class="section-title">值得关注</h2>
-        <div class="section-note">这里记录下一次恢复抓取后应立即补回的内容范围，避免补发时漏掉重点区域。</div>
+        <div class="section-note">这里写的是今天之后最值得继续盯的变量，不是已发生新闻本身。</div>
       </div>
 
       <div class="watch-grid">
         <article class="watch-card lead">
-          <h3>恢复外网后应优先补齐的栏目</h3>
+          <h3>1. ChatGPT 会不会继续把更多执行动作吃进主界面</h3>
+          <p>目录、长文编辑、邮件发送已连起来。下一步若继续打通更多外部服务，ChatGPT 会更像通用工作台，而不是聊天工具。</p>
+        </article>
+
+        <article class="watch-card">
+          <h3>2. Agent 安全会不会继续成为新的产品差异化主战场</h3>
           <ul class="watch-points">
-            <li>中国动态：优先看阿里、百度、腾讯、字节、智谱等过去 24 小时官方或主流媒体更新。</li>
-            <li>美国动态：优先看 OpenAI、Google、Anthropic、Microsoft、NVIDIA、Meta、Amazon 的最新官方公告与 Reuters 交叉确认。</li>
-            <li>新技术与新应用：只保留真正有新能力、新产品或新应用案例的条目。</li>
+            <li><strong>01</strong><span>OpenAI 把 Lockdown Mode 做成用户可选项。</span></li>
+            <li><strong>02</strong><span>Anthropic 一边推更强模型，一边持续拿真实攻击链路做框架化分析。</span></li>
+            <li><strong>03</strong><span>谁能把安全约束做得既强又不太影响可用性，谁就更容易赢企业部署。</span></li>
           </ul>
         </article>
 
         <article class="watch-card">
-          <h3>补发时的核对要求</h3>
-          <ul class="watch-points">
-            <li>每条都要有原始来源链接和明确发布时间。</li>
-            <li>事实报道与观点评论分区展示，不混写。</li>
-            <li>工作日版仍以过去 24 小时为主，不回填更早旧闻冒充新消息。</li>
-          </ul>
+          <h3>3. 中国厂商何时出现下一波“当天级”官方集中更新</h3>
+          <p>今天中国头部公开新增仍偏少，意味着观察重点应转向接下来 48 小时是否会出现新一轮模型、云平台或消费入口联动发布。</p>
+        </article>
+
+        <article class="watch-card">
+          <h3>4. Search、云平台、桌面端正在争夺 Agent 的第一入口</h3>
+          <p>Google 想把入口留在 Search，微软想把入口做进企业系统和 Windows，国内云厂商则把入口做进订阅与部署界面。接下来谁掌握默认入口，谁就更可能拿到持续调用量。</p>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      本页为 2026-06-10 AI 晨报正式 HTML 占位版。当前状态是“待补发”，用于保持固定入口与每日归档连续。已确认当前 shell 存在 DNS/外部抓取异常，因此本次未产出新闻正文。
+      本页生成于 2026-06-10 11:16 CST。事实来源优先使用官方公开文章、帮助中心、产品文档与公告，并补充少量署名博客观点。当前机器本地 shell 仍存在 DNS 解析异常，因此实时抓取无法通过 `curl` 完成；本版改用恢复可用的网页检索路径完成交叉核验。中国区过去 24 小时内若无同量级官方新增，已明确按“近一周内仍具代表性”处理，而未将旧消息伪装成当天新闻。
     </footer>
   </main>
 </body>
