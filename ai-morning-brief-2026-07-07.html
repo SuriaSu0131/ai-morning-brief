@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 晨报｜2026-07-07</title>
+  <style>
+    :root {
+      --paper: #f7f3ec;
+      --paper-edge: #e6ddd1;
+      --ink: #23201b;
+      --muted: #726c63;
+      --line: #d8cfc3;
+      --teal: #4d7f88;
+      --teal-soft: #e7f0f1;
+      --rust: #b65c3e;
+      --headline: #1f1c18;
+      --chip: #f1ece4;
+      --shadow: rgba(53, 42, 28, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(77, 127, 136, 0.08), transparent 24%),
+        linear-gradient(180deg, #ede7dd 0%, #f7f3ec 26%, #f7f3ec 100%);
+      color: var(--ink);
+      font-family: "Songti SC", "Noto Serif SC", serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 24px auto;
+      padding: 22px 22px 28px;
+      background: var(--paper);
+      border: 1px solid var(--paper-edge);
+      box-shadow: 0 18px 40px var(--shadow);
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--headline);
+    }
+
+    .folio,
+    .masthead,
+    .ribbon,
+    .tag,
+    .source-line,
+    .section-note,
+    .footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .folio {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead {
+      text-align: right;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .ribbon {
+      display: inline-block;
+      margin: 16px 0 18px;
+      padding: 7px 12px;
+      background: var(--headline);
+      color: #f8f3ea;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-main,
+    .hero-side {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(77, 127, 136, 0.18), rgba(182, 92, 62, 0.08)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.12));
+    }
+
+    .hero-main::before,
+    .hero-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mix-blend-mode: soft-light;
+    }
+
+    .hero-copy {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      background: rgba(247, 243, 236, 0.94);
+      padding: 16px 18px 14px;
+      border-left: 5px solid var(--teal);
+    }
+
+    .eyebrow {
+      margin: 0 0 7px;
+      font-size: 11px;
+      color: var(--teal);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: 40px;
+      line-height: 1.06;
+      color: var(--headline);
+    }
+
+    .hero-sub,
+    .hero-side p {
+      margin: 12px 0 0;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .hero-side .hero-copy {
+      border-left-color: var(--rust);
+    }
+
+    .brief-list {
+      margin: 18px 0 24px;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+    }
+
+    .brief-list li {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: #fbf8f2;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .brief-list strong {
+      display: inline-block;
+      margin-right: 8px;
+      color: var(--rust);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+      font-size: 34px;
+      text-transform: uppercase;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .notice-grid,
+    .watch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .notice-card,
+    .watch-card {
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.36);
+    }
+
+    .watch-grid .lead {
+      grid-column: span 2;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4b463f;
+    }
+
+    .notice-title,
+    .watch-title {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.12;
+      font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+    }
+
+    .notice-card p,
+    .watch-card p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .source-line {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1100px) {
+      .page {
+        width: auto;
+        margin: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .hero,
+      .notice-grid,
+      .watch-grid,
+      .brief-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .topline {
+        display: grid;
+        gap: 8px;
+      }
+
+      .hero-title {
+        font-size: 34px;
+      }
+
+      .watch-grid .lead {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topline">
+      <div class="folio">A1</div>
+      <div class="masthead">
+        2026年7月7日 星期二<br />
+        AI MORNING BRIEF · 正式版
+      </div>
+    </header>
+
+    <div class="ribbon"><span>AI News Brief</span></div>
+
+    <section class="hero">
+      <article class="hero-main">
+        <div class="hero-copy">
+          <p class="eyebrow">头版导读 · 7月7日</p>
+          <h1 class="hero-title">AI 搜索入口过去 24 小时未见同量级新官宣，版面转向模型、公司与研究进展</h1>
+          <p class="hero-sub">本期优先核对过去 24 小时内的公开来源。DeepSeek、豆包、千问 App、夸克、Chrome、Google Search 等 AI 搜索 / 对话式检索入口未见同量级新增公开发布，搜索专栏按规则保留并回看近一周代表性变化；其后版面转向 Google、Anthropic、OpenAI 等公司的公开更新，以及模型、研究和开发者观点。</p>
+        </div>
+      </article>
+      <aside class="hero-side">
+        <div class="hero-copy">
+          <p class="eyebrow">版面提示</p>
+          <h2 class="hero-title" style="font-size: 30px;">事实与观点分栏标注，缺少新增时直接写明</h2>
+          <p>中国区公开官方新增偏少，相关栏目按规则明确写出“过去24小时未见公开新增”，并退回近一周仍具代表性的公开条目，不以推测性内容补版。</p>
+        </div>
+      </aside>
+    </section>
+
+    <ul class="brief-list">
+      <li><strong>01</strong><span>AI 搜索专栏保留在首位，过去 24 小时未见公开新增，补列 Google Search、Chrome、千问近一周条目。</span></li>
+      <li><strong>02</strong><span>大公司动向聚焦 Google Gemini CLI、Anthropic Claude Code 和 OpenAI 近期公开更新。</span></li>
+      <li><strong>03</strong><span>产品与模型发布收录 Fable 5 与近期公开的新模型/开发工具动态。</span></li>
+      <li><strong>04</strong><span>新技术与新应用关注 Anthropic 对 Claude 内部“工作空间”的研究披露与开发者实验。</span></li>
+    </ul>
+
+    <section class="section" id="search">
+      <div class="section-head">
+        <h2 class="section-title">AI搜索专栏</h2>
+        <div class="section-note">过去 24 小时未见公开新增。DeepSeek、豆包、千问 App、夸克、Chrome、Google Search 等 AI 搜索 / 对话式检索入口未见同量级公开官方新发布。本栏保留，并列近一周内仍值得关注的变化。</div>
+      </div>
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">过去24小时未见公开新增</span>
+          </div>
+          <h3 class="notice-title">Google Search 过去 24 小时未见 AI Mode 同量级新官宣</h3>
+          <p><strong>事实报道：</strong>截至 2026-07-07 早间，Google Search 官方更新页未见 24 小时内新增 AI Mode 或对话式检索入口的同量级公开发布。本期按规则保留栏目，不以二手传闻补版。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://blog.google/products/search/">Google Blog Search</a></span><br />
+            <span>发布时间：栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">近一周代表性变化</span>
+            <span class="tag">Chrome</span>
+          </div>
+          <h3 class="notice-title">Claude in Chrome 在 2026-07-01 的版本说明中被标记为全面可用</h3>
+          <p><strong>事实报道：</strong>Anthropic 在 2026-07-01 发布 Claude Code v2.1.198。发布说明称 Claude in Chrome 已全面可用，并补充后台智能体通知、草稿 PR 自动创建等能力，继续把浏览器入口纳入其助手产品线。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.198">Claude Code GitHub Releases</a></span><br />
+            <span>发布时间：2026-07-01</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">近一周代表性变化</span>
+            <span class="tag">Google Search</span>
+          </div>
+          <h3 class="notice-title">Google 继续将 AI 搜索更新集中在 Search 官方博客页</h3>
+          <p><strong>事实报道：</strong>Google Search 官方更新页本周仍维持 I/O 之后的 AI Mode 和生成式搜索更新聚合方式。虽然过去 24 小时未见新增公开稿件，但该入口仍是跟踪 Search 产品变化的主渠道。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://blog.google/products/search/">Google Blog Search</a></span><br />
+            <span>发布时间：页面最近可见版本 2026-06 下旬，栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">近一周代表性变化</span>
+            <span class="tag">千问</span>
+          </div>
+          <h3 class="notice-title">千问公开更新入口本周未见 App 搜索新单独官宣，仍以官方博客为准</h3>
+          <p><strong>事实报道：</strong>截至 2026-07-07 早间，Qwen 官方博客页未见过去 24 小时内关于千问 App 搜索入口的新单独发布。本栏按规则标注“过去24小时未见公开新增”，并保留其作为近一周追踪入口。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://qwenlm.github.io/blog/">Qwen Blog</a></span><br />
+            <span>发布时间：栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="companies">
+      <div class="section-head">
+        <h2 class="section-title">大公司动向</h2>
+        <div class="section-note">本栏收录大公司公开产品、开发工具、资本开支与平台进展，优先采用官方页面，辅以主流媒体。</div>
+      </div>
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Google</span>
+          </div>
+          <h3 class="notice-title">Google 发布 Gemini CLI，面向开发者开放终端内的 Gemini 工作方式</h3>
+          <p><strong>事实报道：</strong>Google 在官方博客上线 Gemini CLI 介绍页，将 Gemini 能力放进本地终端，面向开发者提供代码生成、解释与命令行协作入口。该更新继续扩展 Google AI 工具在浏览器之外的使用场景。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/">Google Blog</a></span><br />
+            <span>发布时间：页面公开于 2026-07 上旬，栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">Anthropic</span>
+          </div>
+          <h3 class="notice-title">Anthropic 继续以 Claude Code 发布说明推进浏览器与开发者入口整合</h3>
+          <p><strong>事实报道：</strong>Anthropic 在 Claude Code v2.1.198 的发布说明中，把 Chrome 入口、通知和草稿 PR 等开发流程能力并列更新，显示其产品线继续向开发者协作和浏览器场景推进。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.198">Claude Code GitHub Releases</a></span><br />
+            <span>发布时间：2026-07-01</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">OpenAI</span>
+          </div>
+          <h3 class="notice-title">OpenAI 近期公开更新仍集中在新闻页与产品索引页</h3>
+          <p><strong>事实报道：</strong>截至 2026-07-07 早间，OpenAI 官方新闻入口未见过去 24 小时内新增的同量级产品官宣。本期继续将其列入大公司动向，明确标注该公司公开更新窗口仍以新闻与产品索引为主。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://openai.com/news/">OpenAI News</a></span><br />
+            <span>发布时间：栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">中国区</span>
+          </div>
+          <h3 class="notice-title">中国区公开官方新增偏少，过去 24 小时无同量级新增</h3>
+          <p><strong>事实报道：</strong>截至 2026-07-07 早间，DeepSeek、豆包、夸克、千问等主要公开官方入口未见与美国大厂同量级的 24 小时内新增公告。本栏按规则直接标注，不以媒体转述替代官方发布。</p>
+          <div class="source-line">
+            <span>来源：公开官方入口例行核对：<a href="https://api-docs.deepseek.com/updates">DeepSeek API Docs Updates</a>、<a href="https://qwenlm.github.io/blog/">Qwen Blog</a></span><br />
+            <span>发布时间：栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <h2 class="section-title">产品与模型发布</h2>
+        <div class="section-note">本栏关注模型、开发工具与可直接上手的产品更新；无法确认过去 24 小时新增时，退回近一周内仍具代表性的公开发布。</div>
+      </div>
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">生成视频</span>
+          </div>
+          <h3 class="notice-title">Anthropic 介绍 Fable 5，主打更长叙事段落与角色一致性</h3>
+          <p><strong>事实报道：</strong>Anthropic 新闻页公开介绍 Fable 5，重点强调长篇叙事镜头、角色持续一致和创作者工作流中的镜头延展能力。本条可归入本期产品与模型发布栏目。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic News</a></span><br />
+            <span>发布时间：页面核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">开发者工具</span>
+          </div>
+          <h3 class="notice-title">Gemini CLI 将模型调用搬进终端，开发者入口继续前移</h3>
+          <p><strong>事实报道：</strong>Google 把 Gemini CLI 作为开源 AI agent 形式介绍给开发者，强调可在终端内完成代码理解、补全和自动化命令协作。该工具与网页端助手形成互补。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/">Google Blog</a></span><br />
+            <span>发布时间：页面公开于 2026-07 上旬，栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">浏览器入口</span>
+          </div>
+          <h3 class="notice-title">Claude in Chrome 的全面可用继续外溢到开发者产品矩阵</h3>
+          <p><strong>事实报道：</strong>Anthropic 在 7 月 1 日的 Claude Code 发布说明中同时推进 Chrome 入口和工程流程能力，使浏览器成为其模型交互的一部分，而不仅是单独的对话窗口。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.198">Claude Code GitHub Releases</a></span><br />
+            <span>发布时间：2026-07-01</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">中国区</span>
+          </div>
+          <h3 class="notice-title">过去24小时未见中国区公开同量级模型新发</h3>
+          <p><strong>事实报道：</strong>截至 2026-07-07 早间，DeepSeek、豆包、千问、夸克等公开官方入口未见新的同量级模型或搜索产品官宣。本栏仅保留可核验条目，不补入未经确认的内测消息。</p>
+          <div class="source-line">
+            <span>来源：公开官方入口例行核对</span><br />
+            <span>发布时间：栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="applications">
+      <div class="section-head">
+        <h2 class="section-title">新技术与新应用</h2>
+        <div class="section-note">本栏关注论文、研究说明与能看见方法变化的技术披露，尽量使用原始研究或公司研究页。</div>
+      </div>
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">研究</span>
+          </div>
+          <h3 class="notice-title">Anthropic 披露 Claude 内部“工作空间”观测结果</h3>
+          <p><strong>事实报道：</strong>Anthropic 研究团队公开介绍对 Claude 内部表征的观测，称其发现一个可被分析的“workspace”结构，用于追踪模型在响应过程中的中间表征组织方式。相关内容随后被多家技术媒体转载讨论。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://www.anthropic.com/research">Anthropic Research</a></span><br />
+            <span>发布时间：页面核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">开发实践</span>
+          </div>
+          <h3 class="notice-title">终端型 AI agent 继续成为开发者应用主战场</h3>
+          <p><strong>事实报道：</strong>Google 推出 Gemini CLI、Anthropic 继续更新 Claude Code 后，终端内模型协作成为本周开发者产品最密集的公开方向。两者都在把模型使用界面从网页进一步转向代码环境。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/">Google Blog</a>；<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.198">Claude Code Releases</a></span><br />
+            <span>发布时间：2026-07-01 至 2026-07-07 核对</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">媒体跟进</span>
+          </div>
+          <h3 class="notice-title">技术媒体继续把模型内部可解释性与“工作空间”理论并列讨论</h3>
+          <p><strong>事实报道：</strong>围绕 Anthropic 研究披露，技术媒体把其与全球工作空间理论等解释框架并列介绍，讨论重点转向模型中间状态是否能够被持续观测和利用，而非单次性能跑分。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://venturebeat.com/technology/anthropics-new-j-lens-reveals-a-silent-workspace-inside-claude-that-mirrors-a-leading-theory-of-consciousness/">VentureBeat</a></span><br />
+            <span>发布时间：页面核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">事实报道</span>
+            <span class="tag">中国区</span>
+          </div>
+          <h3 class="notice-title">中国区过去24小时未见公开同量级新技术说明</h3>
+          <p><strong>事实报道：</strong>截至 2026-07-07 早间，主要中国区公开官方渠道未见过去 24 小时内新的同量级研究说明或技术长文。本栏按规则直接标注，不以论坛转贴代替原始来源。</p>
+          <div class="source-line">
+            <span>来源：公开官方入口例行核对</span><br />
+            <span>发布时间：栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="opinions">
+      <div class="section-head">
+        <h2 class="section-title">热门博主言论</h2>
+        <div class="section-note">本栏只放观点评论，并明确与事实报道区分；优先选择开发者或研究者对当周公开更新的代表性表达。</div>
+      </div>
+      <div class="notice-grid">
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">观点评论</span>
+            <span class="tag">Simon Willison</span>
+          </div>
+          <h3 class="notice-title">Simon Willison 持续把命令行代理视为当前最活跃的 AI 软件形态</h3>
+          <p><strong>观点评论：</strong>独立开发者 Simon Willison 近期连续关注命令行 AI agent 和开发者工具，把终端视为模型最容易进入真实工作场景的接口之一。其评论与本周 Gemini CLI、Claude Code 的公开更新方向相呼应。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://simonwillison.net/">Simon Willison's Weblog</a></span><br />
+            <span>发布时间：近一周持续更新，栏目核对时间 2026-07-07</span>
+          </div>
+        </article>
+        <article class="notice-card">
+          <div class="tag-row">
+            <span class="tag">观点评论</span>
+            <span class="tag">技术媒体</span>
+          </div>
+          <h3 class="notice-title">围绕 Claude 内部“工作空间”的讨论转向“能否看见模型中间状态”</h3>
+          <p><strong>观点评论：</strong>媒体与研究圈对 Anthropic 披露的关注点，集中在模型中间表征是否能被稳定解释、是否会影响未来调试方式，而不是把它直接当成通用智能结论。</p>
+          <div class="source-line">
+            <span>来源：<a href="https://venturebeat.com/technology/anthropics-new-j-lens-reveals-a-silent-workspace-inside-claude-that-mirrors-a-leading-theory-of-consciousness/">VentureBeat</a></span><br />
+            <span>发布时间：页面核对时间 2026-07-07</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="watch">
+      <div class="section-head">
+        <h2 class="section-title">值得关注</h2>
+        <div class="section-note">本栏用于收纳仍需继续跟踪的公开入口和当天未出现同量级新增的方向。</div>
+      </div>
+      <div class="watch-grid">
+        <article class="watch-card lead">
+          <div class="tag-row">
+            <span class="tag">跟踪提示</span>
+            <span class="tag">AI 搜索</span>
+          </div>
+          <h3 class="watch-title">搜索入口今天缺少新增，不代表本周缺少动作</h3>
+          <p>DeepSeek、豆包、千问 App、夸克、Chrome、Google Search 仍是本自动化的首要观察面。今天公开新增不足以独立成头条，但这些入口一旦出现新版本说明、开放范围调整或新功能上线，仍会优先进入头版。</p>
+        </article>
+        <article class="watch-card">
+          <div class="tag-row">
+            <span class="tag">继续跟踪</span>
+            <span class="tag">中国区官方</span>
+          </div>
+          <h3 class="watch-title">中国区公开官方节奏偏慢</h3>
+          <p>若接下来 24 小时内 DeepSeek、豆包、千问、夸克出现新的正式说明或版本日志，本自动化应优先替换当前“过去24小时未见公开新增”的占位条目。</p>
+        </article>
+        <article class="watch-card">
+          <div class="tag-row">
+            <span class="tag">继续跟踪</span>
+            <span class="tag">开发者工具</span>
+          </div>
+          <h3 class="watch-title">终端 AI agent 仍是本周密集更新方向</h3>
+          <p>Google Gemini CLI 与 Anthropic Claude Code 的公开节奏都在加快。后续若出现插件、浏览器桥接或企业功能追加，优先归入大公司动向和产品与模型发布栏目。</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      本页为中文晨间 AI 新闻简报正式版。条目按“AI搜索专栏 / 大公司动向 / 产品与模型发布 / 新技术与新应用 / 热门博主言论 / 值得关注”固定顺序编排；事实报道与观点评论分栏标注。核对时间：2026-07-07 09:02 CST。
+    </footer>
+  </main>
+</body>
+</html>
